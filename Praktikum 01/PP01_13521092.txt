@@ -1,0 +1,249 @@
+/* PP_13521092.txt */
+
+Bagian 01
+
+a. Query: suami(vito, X).
+X = power
+yes
+
+b. Query: kakak(elon_musk, X).
+X = patrick
+yes
+
+c. Query: cucu(_Y, gojo), anak(X, _Y).
+X = anya ?
+yes
+
+d. Query: keponakan(wesly, X), keponakan(wesly, _U), anaksulung(X), anaksulung(_U), X \= _U, usia(X, _V), usia(_U, _W), _V >= _W.
+X = van_rossum ?
+yes
+
+e. Query: menikah(aqua, _U), saudara(_U, _V), menikah(_V, X).
+X = vito
+yes
+
+f. Query: cucu(X,khelli), anakbungsu(X), \+ (cucu(_U,khelli), anakbungsu(_U), X \= _U, usia(X,_V), usia(_U,_W), _V < _W).
+X = patrick ?
+yes
+
+g. Query: pria(_U), anak(_V,_U), anak(X,_U), _V \= X, kakak(_V,X), \+ (anak(_W,_U), _W \= _V, _W \= X, kakak(_W,X)).
+X = bambang ?
+yes
+X = power ?
+yes
+X = patrick ?
+yes
+
+h. Query: pria(X), menikah(X,Y), anak(_U,X), anak(_V,X), _U \= _V, \+ (anak(_W,X), _U \= _W, _V \= _W ), anaksulung(_U), anakbungsu(_V).
+X = gojo
+Y = lovelace ?
+yes
+X = ave
+Y = aqua ?
+yes
+
+i. Query: menikah(X,_U), orangtua(_V,_U), pria(_V).
+X = vito ?
+yes
+X = power ?
+yes
+X = ave ?
+yes
+X = aqua ?
+yes
+X = wulandari ?
+yes
+
+j. Query: wanita(X), menikah(X,_U), anak(_V,X), anak(_W,X), anaksulung(_V), anakbungsu(_W), _V \= _W.
+X = indah ?
+yes
+X = lovelace ?
+yes
+X = aqua ?
+yes
+
+k. Query: wanita(X), usia(X,_U), anak(_V,X), anaksulung(_V), usia(_V,_W), _U-_W >= 20.
+X = indah ?
+yes
+X = lovelace ?
+yes
+X = khelli ?
+yes
+X = power ?
+yes
+X = aqua ?
+yes
+X = wulandari ?
+yes
+
+l. Query: keturunan(X,gede), usia(X,_Y), _Y >= 25.
+X = van_rossum ?
+yes
+X = bambang ?
+yes
+X = vito ?
+yes
+X = wesly ?
+yes
+
+
+
+Bagian 2
+1. combination(N,C,X)
+Query: combination(5,2,X).
+X = 10.0 ?
+yes
+Query: combination(0,0,X).
+
+2. change(X,Y)
+a. Query: change(X, 14).
+X = 4 ?
+yes
+b. Query: change(X, 0).
+X = 0 ?
+yes
+
+3. fpb(A,B,X)
+a. Query: fpb(14,18,X).
+X = 2 ?
+yes
+b. Query: fpb(0,0,X).
+X = 0 ?
+yes
+
+4. mod(A,B,X)
+a. Query: mod(5,2,X).
+X = 1 ?
+yes
+b. Query: mod(0,0,X).
+X = 0 ?
+yes
+
+5. deret(X,Y)
+a. Query: deret(5, Y).
+Y = 10 ?
+yes
+b. Query: deret(0, Y).
+no
+
+
+
+Bagian 3
+1. min(List, Min)
+a. Query: min([9, -8, -7, 11, -10], Min).
+Min = -10 ?
+yes
+b. Query: min([], Min).
+no
+
+2. max(List, Max)
+a. Query: max([9, -8, -7, 11, -10], Max).
+Max = 11 ?
+yes
+b. Query: max([], Max).
+no
+
+3. range(List,  Range)
+a. Query: range([9, -8, -7, 11, -10], Range).
+Range = 21 ?
+yes
+b. Query: range([], Range).
+no
+
+4. count(List, Count)
+a. Query: count([9, -8, -7, 11, -10], Count).
+Count = 5 ?
+yes
+b. Query: count([], Count).
+Count = 0
+yes
+
+5. sum(List, Sum)
+a. Query: sum([9, -8, -7, 11, -10], Sum).
+Sum = -5 ?
+yes
+b. Query: sum([], Sum).
+no
+
+6. getIndex(List, SearchedElement, Result)
+a. Query: getIndex([1,2,5,-2,1,-4,-7], -2, Index).
+Index = 4 ?
+yes
+b. Query: getIndex([1,2,5,-2,1,-2,-7], -2, Index).
+Index = 4 ?
+yes
+Index = 6 ?
+yes
+c. Query: getIndex([1,2,5,-2,0,-2,-7], -11, Index).
+no
+
+7. swap(List, Index1, Index2, Result)
+a. Query: swap([5,6,7,8], 1, 1, Result).
+Result = [5,6,7,8] ?
+yes
+b. Query: swap([5,6,7,8], 4, 2, Result).
+Result = [5,8,7,6] ?
+yes
+c. Query: swap([5,6,7,8,9], 4, 6, Result).
+no
+
+8. splitList(ListAwal, ListGanjil, ListGenap)
+a. splitList([1,2,3,4,5,6], Ganjil, Genap).
+Ganjil = [1,3,5]
+Genap = [2,4,6] ?
+yes
+b. Query: splitList([1,2,3,4,5,6,7], Ganjil, Genap).
+Ganjil = [1,3,5,7]
+Genap = [2,4,6] ?
+c. Query: splitList([], Ganjil, Genap).
+no
+
+
+
+BONUS
+a. Query: startCalculator.
+Selamat Datang di Kalkulator Prolog!
+Currently Saved Value is 0
+yes
+
+b. Query: add(5).
+Old Saved Value is 0
+New Saved Value is 5
+yes
+
+c. Query: subtract(7).
+Old Saved Value is 5
+New Saved Value is -2
+yes
+
+d. Query: divide(-2).
+Old Saved Value is -2
+New Saved Value is 1.0
+yes
+
+e. Query: multiply(0.5).
+Old Saved Value is 1.0
+New Saved Value is 0.5
+yes
+
+f. Query: getValue.
+Currently Saved Value is 0.5
+
+g. Query: clearCalculator.
+Old Saved Value is 0.5
+New Saved Value is 0
+yes
+
+h. Query: add(6).
+Old Saved Value is 0
+New Saved Value is 6
+yes
+
+i. Query: exitCalculator.
+Terima Kasih telah menggunakan Kalkulator Prolog
+
+j. Query: add(2).
+no
+
+k. Query: subtract(7).
+no
